@@ -31,8 +31,12 @@ jobs:
 
       - name: Deploy to Staging Drafts on Github Pages
         uses: peaceiris/actions-gh-pages@v3
+        # https://github.com/peaceiris/actions-gh-pages
+        # https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-first-deployment-with-github_token
         with:
-          personal_token: ${{ secrets.GITHUB_TOKEN }}
+          # generate token with suitable access rights at
+          # https://github.com/settings/tokens
+          personal_token: ${{ secrets.STAGING_TOKEN }}
           external_repository: modulehandbook/staging
           publish_dir: ./public
           publish_branch: gh_pages_generated_site
