@@ -1,0 +1,35 @@
+name: Deploy Staging
+
+on:
+  push:
+    branches:
+      - main
+    tags-ignore:
+      - 'v*'
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: main
+      - name: Write gitinfo file
+        run: |
+          bin/gitversion.sh ${{ github.ref }} ${{ github.sha }} "${{ github.workflow }}" >  data/gitinfo.yml
+          cat data/gitinfo.yml
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
+      - name: Build Hugo Site
+        run: |
+          hugo --buildDrafts
+      - name: Deploy to Staging Drafts on Github Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.GITHUB_TOKEN }}
+          external_repository: modulehandbook/staging
+          publish_dir: ./public
+          publish_branch: gh_pages_generated_site
+          commit_message: ${{ github.event.head_commit.message }}
