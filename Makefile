@@ -3,6 +3,8 @@
 port=4342
 hugo: open
 - hugo --buildDrafts -p $(port) server
+hugoP: open
+- hugo  -p $(port) server
 ps_hugo:
 - ps -ax | grep "hugo server"
 kill_all_hugo:
