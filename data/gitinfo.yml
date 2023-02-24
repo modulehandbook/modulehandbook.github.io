@@ -1,4 +1,4 @@
-commit: --commit--
+commit:
 tag: --tag--
 ref: --ref--
 sha: --sha--
