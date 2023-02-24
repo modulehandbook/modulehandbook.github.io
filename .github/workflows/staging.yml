@@ -15,7 +15,7 @@ jobs:
           ref: main
       - name: Write gitinfo file
         run: |
-          bin/gitversion.sh ${{ github.ref }} ${{ github.sha }} "${{ github.workflow }}" >  data/gitinfo.yml
+          bin/gitversion.sh data/gitinfo.yml ${{ github.ref }} ${{ github.sha }} "${{ github.workflow }}"
           cat data/gitinfo.yml
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
