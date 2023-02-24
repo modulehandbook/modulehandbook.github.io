@@ -5,14 +5,11 @@ on:
     tags:
       - 'v*'
 
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          ref: main
 
       - name: Write gitinfo file
         run: |
