@@ -15,6 +15,9 @@ jobs:
           ref: main
       - name: Write gitinfo file
         run: |
+          git log
+          git status
+          git rev-parse HEAD | cut -c 1-8
           bin/gitversion.sh data/gitinfo.yml ${{ github.ref }} ${{ github.sha }} "${{ github.workflow }}"
           cat data/gitinfo.yml
       - name: Setup Hugo
