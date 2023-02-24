@@ -27,7 +27,7 @@ jobs:
 
       - name: Build Hugo Site
         run: |
-          hugo --buildDrafts
+          hugo --buildDrafts --baseURL "https://modulehandbook.github.io/staging/"
 
       - name: Deploy to Staging Drafts on Github Pages
         uses: peaceiris/actions-gh-pages@v3
