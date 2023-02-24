@@ -1,9 +1,10 @@
-name: Deploy Production / Github
+name: Deploy Website
 
 on:
   push:
     tags:
       - 'v*'
+
 
 jobs:
   deploy:
@@ -11,32 +12,28 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          submodules: true  # Fetch Hugo themes (true OR recursive)
-      - name: Install Bootstrap with npm
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16'
-      - run: |
-          cd hugo
-          npm install
+          ref: main
+
+      - name: Write gitinfo file
+        run: |
+          bin/gitversion.sh ${{ github.ref }} ${{ github.sha }} "${{ github.workflow }}"
+          cat data/gitinfo.yml
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
           extended: true
-      - name: Write gitinfo file
-        run: |
-          bin/gitversion.sh ${{ github.ref }} ${{ github.sha }} "${{ github.workflow }}"
-          cat data/gitinfo.yml
+
       - name: Build Hugo Site
         run: |
-          hugo
+          hugo --baseURL "https://modulehandbook.github.io/staging/"
 
       - name: Deploy to Production on Github Pages
         uses: peaceiris/actions-gh-pages@v3
         # if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./hugo/public
-          publish_branch: hugo_production
+          publish_dir: ./public
+          publish_branch: gh_pages_generated_site
           commit_message: "${{ github.ref }} ${{ github.event.head_commit.message }}"

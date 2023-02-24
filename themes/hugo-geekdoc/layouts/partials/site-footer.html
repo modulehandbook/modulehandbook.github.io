@@ -19,6 +19,17 @@
             </a>
           </span>
         {{ end }}
+
+        {{ with .Site.Data.gitinfo }}
+        <span class="gdoc-footer__item gdoc-footer__item--row">
+      Version: <a href="https://github.com/modulehandbook/modulehandbook.github.io/commit/{{ .commit}}"
+                  class="gdoc-footer__link">
+        {{ .commit}}</a> {{with .tag}} ({{ . }}){{ end }}
+              <!-- ref: {{ .ref }}, sha: {{ .sha }},  -->
+        workflow: {{ .workflow }}
+          </span>
+        {{ end }}
+
       </section>
       {{ with .Site.Params.GeekdocContentLicense }}
         <section class="flex flex-wrap align-center">

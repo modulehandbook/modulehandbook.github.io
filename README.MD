@@ -1,9 +1,19 @@
 # About
 
-This is the source code for the site https://modulehandbook.github.io .
+This is the source code for the site
 
+https://modulehandbook.github.io
+
+## Deployment
+
+### Staging
 Any push to main deploys the site with drafts to staging,
+https://github.com/modulehandbook/staging
+(branch gh_pages_generated_site)
+
+### Production
 any version tag deploys to https://modulehandbook.github.io.
+(branch gh_pages_generated_site)
 
 # Site creation notes
 
