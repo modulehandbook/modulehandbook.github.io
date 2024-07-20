@@ -12,6 +12,11 @@ a Program, adding the information of "semester" and "required" to this associati
 
 This way, Courses can be part of more than one Program, in different semesters, as required or elective Course.
 
+There are two ways to link Courses to Programs:
+
+- create Course from Program site OR
+- create CourseProgram link instance after Course and Program have been created
+
 ```mermaid
 classDiagram 
     
