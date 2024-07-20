@@ -1,7 +1,8 @@
 ---
-title: "Site_online"
+title: "Site online"
 date: 2023-02-24T15:00:54+01:00
-draft: true
+draft: false
+weight: 2
 ---
 
-bla bla
+The Module Handbook now has it's own web site.

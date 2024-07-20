@@ -1,9 +1,9 @@
 ---
-title: "GIU Project"
-weight: 1
+title: "Documentation"
+weight: 2
 # geekdocFlatSection: false
 # geekdocToc: 6
 # geekdocHidden: false
-draft: true
 ---
-About the GIU Project
+
+

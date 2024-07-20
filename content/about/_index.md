@@ -1,16 +1,16 @@
 ---
-title: "Module Handbook"
+title: "About"
 weight: 1
 # geekdocFlatSection: false
-# geekdocToc: 6
+geekdocToc: 1
 # geekdocHidden: false
+draft: false
+author: Lotte Unckell
 ---
-
-
+# About the Module Handbook
 
 The module handbook software was initially developed as part of the DAAD-Project
 [German International University of Applied Sciences (GIU AS)](https://www.htw-berlin.de/forschung/online-forschungskatalog/projekte/projekt/?eid=2839) to support the joined development of
 new study programs and curricula for the newly founded [GIU AS](https://giu-uni.de/) in Kairo.
 
-It is developed by students and staff at HTW Berlin, and the basis of further software development projects in the context of supporting university studies, as the [Studyplan](https://github.com/modulehandbook/studyplan).
-
+[More about the Module Handbook Design Rationale.](./design)
