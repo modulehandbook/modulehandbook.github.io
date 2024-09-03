@@ -10,7 +10,7 @@ name: Deploy Staging
 on:
   push:
     branches:
-      - main
+      - disabled
     tags-ignore:
       - 'v*'
     

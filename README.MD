@@ -6,16 +6,7 @@ https://modulehandbook.github.io
 
 ## Deployment
 
-
-### Staging
-Any push to main deploys the site with drafts to staging: 
-[https://modulehandbook.github.io/staging](https://modulehandbook.github.io/staging)
-
-(using the repo ) https://github.com/modulehandbook/staging
-
-
-### Production
-any version tag deploys to [https://modulehandbook.github.io](https://modulehandbook.github.io).
+Every push to main deploys the site to [https://modulehandbook.github.io](https://modulehandbook.github.io).
 
 # Site creation notes
 
